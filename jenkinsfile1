@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-     sage('Build Docker Image') {
+     sage('Build') {
     steps {
         dir('Main Branch Code') {
             sh """
@@ -26,7 +26,7 @@ pipeline {
 }
 
 
-        stage('Push Docker Image') {
+        stage('Push') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'docker-creds',
@@ -41,7 +41,7 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
+        stage('deploy') {
             steps {
                 sh """
                   docker rm -f flask-app || true
