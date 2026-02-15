@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "krishna/multibranch-flask-app"
+        DOCKER_IMAGE = "adaleshri/leave-management"
         DOCKER_TAG   = "latest"
     }
 
