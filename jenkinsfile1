@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    options {
-        disableConcurrentBuilds()
-    }
-
     environment {
         DOCKER_IMAGE = "krishna/multibranch-flask-app"
         DOCKER_TAG   = "latest"
