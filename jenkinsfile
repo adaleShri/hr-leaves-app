@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Vikasghandge/HR-Leave_App.git'
+                    url: 'https://github.com/adaleShri/hr-leaves-app.git'
             }
         }
 
