@@ -26,5 +26,8 @@ RUN dos2unix /wait-for-it.sh && \
 HEALTHCHECK --interval=30s --timeout=3s \
   CMD curl -f http://localhost:8090/actuator/health || exit 1
 
-# Run app with wait-for-it
-ENTRYPOINT ["bash", "/wait-for-it.sh", "mysql:3306", "--timeout=60", "--", "java", "-jar", "app.jar"]
+#chatgpt
+ENTRYPOINT ["sh","-c","/wait-for-it.sh mysql:3306 --timeout=60 -- java -jar app.jar"]   
+
+# Run app with wait-for-it orignal
+#ENTRYPOINT ["bash", "/wait-for-it.sh", "mysql:3306", "--timeout=60", "--", "java", "-jar", "app.jar"]
